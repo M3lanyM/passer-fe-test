@@ -10,13 +10,15 @@ import { AppMaterialModule } from 'src/app/app.material.module';
 import { BoxWhiteComponent } from 'src/components/box-white/box-white.component';
 import { TabsComponent } from 'src/components/tabs/tabs.component';
 import { PageBaseComponent } from './page-base/page-base.component';
+import { OcupationComponent } from './page-base/ocupation/ocupation.component';
 
 
 @NgModule({
   declarations: [
     BoxWhiteComponent,
     TabsComponent,
-    PageBaseComponent
+    PageBaseComponent,
+    OcupationComponent
   ],
   imports: [
     RouterModule,
