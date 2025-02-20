@@ -12,6 +12,7 @@ import { TabsComponent } from 'src/components/tabs/tabs.component';
 import { PageBaseComponent } from './page-base/page-base.component';
 import { OcupationComponent } from './page-base/ocupation/ocupation.component';
 import { CountryComponent } from './page-base/country/country.component';
+import { IdentificationTypeComponent } from './page-base/identification-type/identification-type.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CountryComponent } from './page-base/country/country.component';
     TabsComponent,
     PageBaseComponent,
     OcupationComponent,
-    CountryComponent
+    CountryComponent,
+    IdentificationTypeComponent
   ],
   imports: [
     RouterModule,
