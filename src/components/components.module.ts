@@ -11,6 +11,7 @@ import { BoxWhiteComponent } from 'src/components/box-white/box-white.component'
 import { TabsComponent } from 'src/components/tabs/tabs.component';
 import { PageBaseComponent } from './page-base/page-base.component';
 import { OcupationComponent } from './page-base/ocupation/ocupation.component';
+import { CountryComponent } from './page-base/country/country.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { OcupationComponent } from './page-base/ocupation/ocupation.component';
     BoxWhiteComponent,
     TabsComponent,
     PageBaseComponent,
-    OcupationComponent
+    OcupationComponent,
+    CountryComponent
   ],
   imports: [
     RouterModule,
