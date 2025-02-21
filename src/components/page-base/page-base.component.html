@@ -1,24 +1,24 @@
 <div class="container">
     <h2>CATÁLOGO DE RIESGOS</h2>
-
+  
     <div class="tabs">
-        <button [class.active]="selectedTab === 'ocupation'" (click)="selectTab('ocupation')">Ocupaciones</button>
-        <button [class.active]="selectedTab === 'country'" (click)="selectTab('country')">Países</button>
-        <button [class.active]="selectedTab === 'identification-type'"
-            (click)="selectTab('identification-type')">Identificaciones</button>
-    </div>
-
-    <div class="tab-content">
-        <app-ocupation *ngIf="selectedTab === 'ocupation'"></app-ocupation>
-        <app-country *ngIf="selectedTab === 'country'"></app-country>
-        <app-identification-type *ngIf="selectedTab === 'identification-type'"></app-identification-type>
-    </div>
-
+        <button [class.active]="activeTab === 'ocupation'" (click)="changeTab('ocupation')">Ocupaciones</button>
+        <button [class.active]="activeTab === 'country'" (click)="changeTab('country')">Países</button>
+        <button [class.active]="activeTab === 'identification-type'" (click)="changeTab('identification-type')">Identificaciones</button>
+      </div>
+    
+      <div class="tab-content">
+        <app-ocupation *ngIf="activeTab === 'ocupation'" [ocupations]="ocupations"></app-ocupation>
+        <app-country *ngIf="activeTab === 'country'"></app-country>
+        <app-identification-type *ngIf="activeTab === 'identification-type'"></app-identification-type>
+      </div>
+    
     <h3>Buscar</h3>
-    <select class="selector" required (change)="selectOption($event)">
-        <option *ngFor="let option of selectedOptions" [value]="option.value">
-            {{ option.label }}
-        </option>
-    </select>
+    <select class="selector" required >
+      <option  >
 
-</div>
+      </option>
+    </select>
+    
+  </div>
+  

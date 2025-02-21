@@ -4,7 +4,6 @@ export interface BaseResponse {
     success: boolean;
     data: any;
 };
-
 export interface ResponseCountryList extends BaseResponse {
     data: Country[];
 };
@@ -14,5 +13,6 @@ export interface ResponseIdentificationType extends BaseResponse {
 };
 
 export interface ResponseOcupation extends BaseResponse {
+    success: boolean;
     data: Ocupation[];
-};
+}

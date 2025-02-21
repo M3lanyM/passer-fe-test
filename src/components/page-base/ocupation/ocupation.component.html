@@ -1,1 +1,11 @@
-<p>ocupation works!</p>
+<div *ngIf="ocupations.length > 0; else loading">
+  <ul>
+    <li *ngFor="let occupation of ocupations">
+      {{ occupation.name }} (Código: {{ occupation.code }})
+    </li>
+  </ul>
+</div>
+
+<ng-template #loading>
+  <p>Cargando ocupaciones...</p>
+</ng-template>
