@@ -34,6 +34,10 @@ import { IdentificationTypeComponent } from './page-base/identification-type/ide
   ],
   exports: [
     BoxWhiteComponent,
+    PageBaseComponent,
+    OcupationComponent,
+    CountryComponent,
+    IdentificationTypeComponent,
     TabsComponent
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-CR' }]
