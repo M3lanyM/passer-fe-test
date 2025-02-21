@@ -1,1 +1,30 @@
-<p>country works!</p>
+<div class="search-box">
+    <label>Buscar</label>
+    <input type="text" placeholder="País" [(ngModel)]="searchTerm" />
+</div>
+<h3>Buscar</h3>
+<select class="selector" required (change)="selectOption($event)">
+    <option *ngFor="let option of selectedOptions" [value]="option.value">
+        {{ option.label }}
+    </option>
+</select>
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th>País</th>
+            <th>Código SUGEF</th>
+            <th>Nivel de riesgo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of filteredCountries()">
+            <td>{{ country.name }}</td>
+            <td>{{ country.sugefCode }}</td>
+            <td>{{ country.riskScore }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button class="reclassify-button">
+    <i class="icon-pencil"></i> Reclasificar
+</button>

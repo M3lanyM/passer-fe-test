@@ -5,6 +5,7 @@ export interface BaseResponse {
     data: any;
 };
 export interface ResponseCountryList extends BaseResponse {
+    success: boolean;
     data: Country[];
 };
 

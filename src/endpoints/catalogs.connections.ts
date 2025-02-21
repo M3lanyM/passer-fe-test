@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ResponseOcupation } from 'src/models/response-catalogs';
+import { ResponseCountryList, ResponseOcupation } from 'src/models/response-catalogs';
 
 @Injectable({
   providedIn: 'root',
@@ -42,6 +42,23 @@ export class GeneralMethodsService {
       }
     } catch (error) {
       console.error('Error al obtener ocupaciones:', error);
+      return { success: false, data: [] };
+    }
+  }
+  async getCountries(): Promise<ResponseCountryList> {
+    try {
+      const response$ = this.http.get<ResponseCountryList>(
+        `${this.urlCatalogs}${this.GET_COUNTRIES}`
+      );
+      const result = await lastValueFrom(response$);
+      if (result.success) {
+        return result;
+      } else {
+        console.warn('No se encontraron paises.');
+        return { success: false, data: [] };
+      }
+    } catch (error) {
+      console.error('Error al obtener paises:', error);
       return { success: false, data: [] };
     }
   }

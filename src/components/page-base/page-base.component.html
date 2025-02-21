@@ -9,16 +9,9 @@
     
       <div class="tab-content">
         <app-ocupation *ngIf="activeTab === 'ocupation'" [ocupations]="ocupations"></app-ocupation>
-        <app-country *ngIf="activeTab === 'country'"></app-country>
+        <app-country *ngIf="activeTab === 'country'" [countries]="countries"></app-country>
         <app-identification-type *ngIf="activeTab === 'identification-type'"></app-identification-type>
       </div>
-    
-    <h3>Buscar</h3>
-    <select class="selector" required >
-      <option  >
-
-      </option>
-    </select>
     
   </div>
   

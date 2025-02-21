@@ -30,6 +30,16 @@ export class PageBaseComponent implements OnInit {
           this.ocupations = [];
         }
       }
+      if (this.activeTab === 'country') {
+        const response = await this.generalMethodsService.getCountries();
+        console.log('Respuesta de paises:', response);
+        if (response.success && response.data.length > 0) {
+          this.countries = response.data;
+        } else {
+          console.warn('No se encontraron paises.');
+          this.countries = [];
+        }
+      }
     } catch (error) {
       console.error('Error al obtener datos:', error);
       this.countries = [];
