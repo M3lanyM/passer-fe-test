@@ -10,6 +10,7 @@ export interface ResponseCountryList extends BaseResponse {
 };
 
 export interface ResponseIdentificationType extends BaseResponse {
+    success: boolean;
     data: TypeId[];
 };
 

@@ -40,6 +40,14 @@ export class PageBaseComponent implements OnInit {
           this.countries = [];
         }
       }
+      if (this.activeTab === 'identification-type') {
+        const response = await this.generalMethodsService.getIdentificationTypes();
+        if (response.success && response.data.length > 0) {
+          this.identificationTypes = response.data;
+        } else {
+          this.identificationTypes = [];
+        }
+      }
     } catch (error) {
       console.error('Error al obtener datos:', error);
       this.countries = [];

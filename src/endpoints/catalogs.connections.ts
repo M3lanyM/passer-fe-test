@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ResponseCountryList, ResponseOcupation } from 'src/models/response-catalogs';
+import { ResponseCountryList, ResponseIdentificationType, ResponseOcupation } from 'src/models/response-catalogs';
 
 @Injectable({
   providedIn: 'root',
@@ -62,4 +62,22 @@ export class GeneralMethodsService {
       return { success: false, data: [] };
     }
   }
+  async getIdentificationTypes(): Promise<ResponseIdentificationType> {
+    try {
+      const response$ = this.http.get<ResponseIdentificationType>(
+        `${this.urlCatalogs}${this.GET_TYPE_ID}`
+      );
+      const result = await lastValueFrom(response$);
+      if (result.success) {
+        return result;
+      } else {
+        console.warn('No se encontraron tipos de identificación.');
+        return { success: false, data: [] };
+      }
+    } catch (error) {
+      console.error('Error al obtener tipos de identificación:', error);
+      return { success: false, data: [] };
+    }
+}
+
 }

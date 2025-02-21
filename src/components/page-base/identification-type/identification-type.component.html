@@ -1,1 +1,6 @@
-<p>identification-type works!</p>
+<h3>Buscar</h3>
+<select class="selector" required (change)="selectOption($event)">
+    <option *ngFor="let type of identificationTypes" [value]="type.code">
+        {{ type.name }}
+    </option>
+</select>
