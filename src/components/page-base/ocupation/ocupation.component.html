@@ -1,3 +1,10 @@
+<h3>Buscar</h3>
+<select class="selector" required (change)="selectOption($event)">
+    <option *ngFor="let option of selectedOptions" [value]="option.value">
+        {{ option.label }}
+    </option>
+</select>
+
 <div *ngIf="ocupations.length > 0; else loading">
   <ul>
     <li *ngFor="let occupation of ocupations">

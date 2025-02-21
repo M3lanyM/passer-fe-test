@@ -1,13 +1,7 @@
-<div class="search-box">
-    <label>Buscar</label>
-    <input type="text" placeholder="País" [(ngModel)]="searchTerm" />
-</div>
 <h3>Buscar</h3>
-<select class="selector" required (change)="selectOption($event)">
-    <option *ngFor="let option of selectedOptions" [value]="option.value">
-        {{ option.label }}
-    </option>
-</select>
+    <input class="inputbox" type="text" placeholder="País" [(ngModel)]="searchTerm" />
+
+    <div>
 <table class="custom-table">
     <thead>
         <tr>
@@ -24,7 +18,7 @@
         </tr>
     </tbody>
 </table>
-
+</div>
 <button class="reclassify-button">
     <i class="icon-pencil"></i> Reclasificar
 </button>

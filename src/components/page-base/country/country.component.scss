@@ -5,13 +5,13 @@
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .custom-table thead {
-    background: #6a5acd; // Color lila
-    color: white;
+    background: #f8f9fa; /* Color de fondo más claro para el encabezado */
+    color: #212529;
     text-align: left;
+    font-weight: bold;
 }
 
 .custom-table th,
@@ -21,14 +21,24 @@
 }
 
 .custom-table tbody tr:hover {
-    background: #f5f5f5;
+    background: #e9ecef; /* Color al pasar el mouse */
     cursor: pointer;
+}
+
+/* Contenedor del buscador con sombra */
+.search-container {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra en el contenedor */
+    margin-bottom: 20px;
+    width: 80%; /* Hacerlo menos ancho */
+    max-width: 500px;
 }
 
 .search-box {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
 }
 
 .search-box label {
@@ -36,12 +46,14 @@
     margin-bottom: 5px;
 }
 
-.search-box input {
+
+.inputbox{
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    width: 100%;
+    width: 15%;
     font-size: 16px;
+    background: #f8f9fa;
 }
 
 .reclassify-button {
